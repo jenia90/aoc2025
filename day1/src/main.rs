@@ -21,7 +21,6 @@ fn main() {
     for rot in rotations {
         let old_state = state;
         count += rot.abs() / 100;
-        println!("State: {}; Rotation: {}; count: {}", state, rot, count);
 
         state += rot % 100;
 
@@ -38,5 +37,5 @@ fn main() {
         }
     }
 
-    println!("Part 1: {}", count);
+    println!("Answer: {}", count);
 }
