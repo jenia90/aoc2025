@@ -9,4 +9,4 @@ path = "src/main.rs"
 
 [dependencies]
 clap.workspace = true
-rayon = "1.11"
+rayon.workspace = true
