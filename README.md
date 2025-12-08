@@ -42,14 +42,6 @@ members = [
   cargo run -p day1 <input_file> [<addition_args>...]
   ```
 
-#### Reading inputs in code
-
-Input files are located relative to the crate root. For example, to read the real input in Rust:
-
-```rust
-let input = std::fs::read_to_string("inputs/input.txt")?;
-```
-
 #### Adding a new day
 
 1. Create a new binary crate in the repository root:
