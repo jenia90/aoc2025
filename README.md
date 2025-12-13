@@ -1,3 +1,5 @@
+![Build Status](https://github.com/jenia90/aoc2025/actions/workflows/rust.yml/badge.svg)
+
 # Advent of Code 2025
 
 This repository is organized as a Cargo workspace with one crate per puzzle day.
