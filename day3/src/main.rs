@@ -5,7 +5,6 @@ use std::fs::read_to_string;
 #[derive(Debug, Parser)]
 struct Args {
     input_path: String,
-    num_batteries: usize,
 }
 
 fn get_joltage(line: &str, num_batteries: usize) -> u64 {
@@ -28,16 +27,50 @@ fn get_joltage(line: &str, num_batteries: usize) -> u64 {
         .unwrap()
 }
 
-fn main() {
-    let args = Args::parse();
-    let total: u64 = read_to_string(&args.input_path)
+fn run_part1(input_path: String) -> u64 {
+    read_to_string(input_path)
         .expect("Failed to read input file")
         .trim()
         .lines()
         .collect::<Vec<_>>()
         .par_iter()
-        .map(|&line| get_joltage(&line, args.num_batteries))
-        .sum();
+        .map(|&line| get_joltage(&line, 2))
+        .sum()
+}
 
-    println!("Total: {}", total);
+fn run_part2(input_path: String) -> u64 {
+    read_to_string(input_path)
+        .expect("Failed to read input file")
+        .trim()
+        .lines()
+        .collect::<Vec<_>>()
+        .par_iter()
+        .map(|&line| get_joltage(&line, 12))
+        .sum()
+}
+
+fn main() {
+    let args = Args::parse();
+    let result_part1 = run_part1(args.input_path.clone());
+    let result_part2 = run_part2(args.input_path.clone());
+
+    println!("Result part1: {}", result_part1);
+    println!("Result part2: {}", result_part2);
+}
+
+#[cfg(test)]
+mod tests {
+    use crate::{run_part1, run_part2};
+
+    #[test]
+    fn test_run_part1() {
+        let path = "inputs/test-input.txt".to_string();
+        assert_eq!(run_part1(path), 357)
+    }
+
+    #[test]
+    fn test_run_part2() {
+        let path = "inputs/test-input.txt".to_string();
+        assert_eq!(run_part2(path), 3121910778619)
+    }
 }
