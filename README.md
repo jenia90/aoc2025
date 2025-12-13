@@ -1,4 +1,4 @@
-![Build Status](https://github.com/jenia90/aoc2025/actions/workflows/rust.yml/badge.svg)
+[![Rust](https://github.com/jenia90/aoc2025/actions/workflows/rust.yml/badge.svg)](https://github.com/jenia90/aoc2025/actions/workflows/rust.yml)
 
 # Advent of Code 2025
 
