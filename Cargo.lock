@@ -3,21 +3,6 @@
 version = 4
 
 [[package]]
-name = "advent_of_code-day1"
-version = "0.1.0"
-dependencies = [
- "clap",
-]
-
-[[package]]
-name = "advent_of_code-day2"
-version = "0.1.0"
-dependencies = [
- "clap",
- "rayon",
-]
-
-[[package]]
 name = "anstream"
 version = "0.6.21"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -139,6 +124,21 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d0a5c400df2834b80a4c3327b3aad3a4c4cd4de0629063962b03235697506a28"
 
 [[package]]
+name = "day1"
+version = "0.1.0"
+dependencies = [
+ "clap",
+]
+
+[[package]]
+name = "day2"
+version = "0.1.0"
+dependencies = [
+ "clap",
+ "rayon",
+]
+
+[[package]]
 name = "day3"
 version = "0.1.0"
 dependencies = [
@@ -149,6 +149,10 @@ dependencies = [
 [[package]]
 name = "day4"
 version = "0.1.0"
+dependencies = [
+ "clap",
+ "rayon",
+]
 
 [[package]]
 name = "either"
