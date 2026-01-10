@@ -70,26 +70,6 @@ fn run_part2(input_path: String) -> i64 {
     max_area
 }
 
-fn assert_polygon_is_valid(poly: &[Point]) {
-    let n = poly.len();
-    assert!(n >= 4);
-
-    for i in 0..n {
-        let a = poly[i];
-        let b = poly[(i + 1) % n];
-        let c = poly[(i + 2) % n];
-
-        // Edges must be axis-aligned.
-        assert!(a.x == b.x || a.y == b.y);
-
-        let ab_vertical = a.x == b.x;
-        let bc_vertical = b.x == c.x;
-
-        // No two adjacent edges both vertical or both horizontal.
-        assert!(ab_vertical != bc_vertical);
-    }
-}
-
 /// Check whether the axis-aligned rectangle with opposite corners a,b
 /// is considered "within" the polygon per the author’s three conditions. [page:1]
 fn rectangle_in_polygon(a: Point, b: Point, poly: &[Point]) -> bool {

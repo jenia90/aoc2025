@@ -5,4 +5,3 @@ edition = "2024"
 
 [dependencies]
 clap.workspace = true
-rayon.workspace = true

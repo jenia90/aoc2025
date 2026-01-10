@@ -187,7 +187,6 @@ name = "day9"
 version = "0.1.0"
 dependencies = [
  "clap",
- "rayon",
 ]
 
 [[package]]
